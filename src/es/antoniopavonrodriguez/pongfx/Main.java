@@ -1,51 +1,28 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package es.antoniopavonrodriguez.pongfx;
 
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.layout.StackPane;
+import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 
-/**
- *
- * @author anzon
- */
 public class Main extends Application {
     
     @Override
     public void start(Stage primaryStage) {
-        Button btn = new Button();
-        btn.setText("Bienvenidos a la grieta del invocador\nLes habla Skaid3n");
-        btn.setOnAction(new EventHandler<ActionEvent>() {
-            
-            @Override
-            public void handle(ActionEvent event) {
-                System.out.println("Hello World!");
-            }
-        });
-        
-        StackPane root = new StackPane();
-        root.getChildren().add(btn);
-        
-        Scene scene = new Scene(root, 300, 250);
-        
-        primaryStage.setTitle("Hello World!");
+        Pane root = new Pane();
+        Scene scene = new Scene(root, 600, 400);
+        scene.setFill(Color.BLACK);
+        primaryStage.setTitle("League of Draven");
         primaryStage.setScene(scene);
         primaryStage.show();
+        
+        Circle circleBall = new Circle();
+        circleBall.setCenterX(10);
+        circleBall.setCenterY(30);
+        circleBall.setRadius(7);
+        root.getChildren().add(circleBall);
+        circleBall.setFill(Color.WHITE);
     }
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        launch(args);
-    }
-    
 }
